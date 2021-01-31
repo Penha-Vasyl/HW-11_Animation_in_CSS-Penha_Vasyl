@@ -1,0 +1,130 @@
+.second_animation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.basis {
+  height: 10px;
+  width: 700px;
+  background-color:  lightslategray;
+}
+
+.circles_wrapper, .shadows_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(to right, blue, red);
+  background-attachment: fixed;
+}
+
+.lace {
+  width: 2px;
+  height: 200px;
+  background-color: lightslategray;
+}
+
+.circle_block, .shadow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  transform-origin: center 0;
+}
+
+.circle_block:first-child {
+  animation-name: leftBall;
+  animation-timing-function: ease-in;
+}
+
+.circle_block:last-child {
+  animation-name: rightBall;
+  animation-timing-function: ease-out;
+}
+
+.shadows_wrapper {
+  margin-top: 100px;
+}
+
+.shadow {
+  width: 100px;
+  height: 10px;
+  background-color: grey;
+  box-shadow: 0 0 15px 10px lightslategray;
+  opacity: 0.4;
+  border-radius: 50%;
+}
+
+.shadow:first-child {
+  animation-name: leftShadow;
+  animation-timing-function: ease-in;
+}
+
+.shadow:last-child {
+  animation-name: rightShadow;
+  animation-timing-function: ease-out;
+}
+
+@keyframes leftBall {
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+
+
+
+@keyframes rightBall {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes leftShadow {
+  0% {
+    transform: translateX(-250px);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(0px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 0.4;
+  }
+}
+
+@keyframes rightShadow {
+  0% {
+    transform: translateX(0px);
+    opacity: 0.4;
+  }  
+  50% {
+    transform: translateX(0px);
+    opacity: 0.4;
+  } 
+  100% {
+    transform: translateX(250px);
+    opacity: 0.1;
+  }
+}

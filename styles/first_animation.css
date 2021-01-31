@@ -1,0 +1,112 @@
+.first_animation {
+  width: 30%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row_sword {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.sword-1 {
+  width: 125px;
+  height: 5px;
+  background: white;
+}
+
+.sword-2 {
+  width: 15px;
+  height: 5px;
+  background: black;
+  margin-left: 20px;
+}
+
+.sword-2-right {
+  margin-left: 90px;
+}
+
+.first {
+  position: absolute;
+  margin-bottom: 160px;
+  height: 15px;
+  width: 135px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second {
+  position: absolute;
+  margin-bottom: 80px;
+  height: 15px;
+  width: 135px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.third {
+  position: absolute;
+  height: 15px;
+  width: 135px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.first_animation:hover .first {
+  animation: flyingTop 1s linear 1;
+  animation-fill-mode: forwards; 
+  animation-direction: alternate; 
+}
+
+@keyframes flyingTop {
+  0% { transform: translateY(0); opacity: 1;}
+  20% { transform: translateY(-20px); opacity: 0.7;}
+  40% { transform: translateY(-20px) translateX(-20px); opacity: 0.5;}
+  60% { transform: translateY(-40px); opacity: 0.3;}
+  80% { transform: translateY(-40px) translateX(20px); opacity: 0.2;}
+  100% { transform: translateY(-60px); opacity: 0;}
+}
+
+.first_animation:hover .red-sword {
+  animation: rightSword 1s linear 1;
+  animation-fill-mode: forwards; 
+  animation-direction: alternate;
+}
+
+@keyframes rightSword {
+  0% { 
+    transform: rotate(0) translateY(0); 
+    background: rgba(219, 13, 54, 0.2);
+  }
+  100% { 
+    transform: rotate(45deg) translateY(28px);  
+    background: rgba(219, 13, 54, 1); 
+    box-shadow: 0 0 10px 5px rgba(219, 13, 51, 0.5);
+  }
+}
+
+.first_animation:hover .green-sword {
+  animation: leftSword 1s linear 1;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+
+@keyframes leftSword {
+  0% { 
+    transform: rotate(0); 
+    background-color: rgba(66, 231, 66. 0.2); 
+    box-shadow: rgba(66, 231, 66, 0.2) 5px 5px 5px 5px;
+  }
+  100% {  
+    transform: rotate(-45deg) translateY(-28px); 
+    background: rgba(66, 231, 66, 1); 
+    box-shadow: 0 0 10px 5px rgba(66, 231, 66, 0.5); 
+  }
+}
